@@ -1,6 +1,6 @@
 # RunWise: Rueeda's Fitness Insights
 
-runwise_dashboard_cover.png.png
+
 
 This is a personal fitness data science project by Rueeda that explores simulated treadmill running data over 30 days.
 
