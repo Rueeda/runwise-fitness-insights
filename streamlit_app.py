@@ -5,34 +5,44 @@ import matplotlib.pyplot as plt
 # Load the data
 df = pd.read_csv("runwise_simulated_data.csv")
 
-# Show column names (for debugging or curiosity)
-st.write("📌 Columns in your data:")
-st.write(df.columns.tolist())
+# Layout: Header
+st.title("🏃‍♀️ Runwise: Fitness Insights Dashboard")
+st.markdown("#### 🍂 A warm-toned, minimalist look at Rueeda’s running journey")
 
-# App title
-st.title("Runwise: Fitness Insights Dashboard")
-st.markdown("📊 A 30-day analysis of Rueeda's simulated treadmill data.")
+# Metrics summary
+col1, col2, col3 = st.columns(3)
+col1.metric("📅 Total Days", len(df))
+col2.metric("📏 Avg Distance", f"{df['Distance (km)'].mean():.2f} km")
+col3.metric("⚡ Avg Speed", f"{df['Running Speed (km/h)'].mean():.1f} km/h")
 
-# Show Raw Data
-st.subheader("Raw Data")
+st.markdown("---")
+
+# Sidebar
+st.sidebar.title("🧡 Runwise Navigation")
+st.sidebar.markdown("A soft autumn dashboard by **Rueeda**")
+st.sidebar.image("https://cdn-icons-png.flaticon.com/512/235/235861.png", width=80)
+st.sidebar.markdown("Built with love & data 💻")
+
+# Raw Data
+st.subheader("📄 Raw Data")
 st.dataframe(df)
 
-# Plot: Total Distance by Date
+# Distance Plot
 st.subheader("📈 Distance Over Time")
-fig, ax = plt.subplots()
-ax.plot(df['Date'], df['Distance (km)'], marker='o')
-ax.set_xlabel("Date")
-ax.set_ylabel("Distance (km)")
-ax.set_title("Daily Distance Covered")
+fig1, ax1 = plt.subplots()
+ax1.plot(df['Date'], df['Distance (km)'], marker='o', color='#CC7351')  # Burnt sienna tone
+ax1.set_xlabel("Date")
+ax1.set_ylabel("Distance (km)")
+ax1.set_title("Daily Distance Covered")
 plt.xticks(rotation=45)
-st.pyplot(fig)
+st.pyplot(fig1)
 
-# Optional: Plot Running Speed
-st.subheader("⚡ Running Speed Over Time")
+# Speed Plot
+st.subheader("⚡ Speed Over Time")
 fig2, ax2 = plt.subplots()
-ax2.plot(df['Date'], df['Running Speed (km/h)'], color='green', marker='s')
+ax2.plot(df['Date'], df['Running Speed (km/h)'], color='#A05C4E', marker='s')  # Warm brick red
 ax2.set_xlabel("Date")
 ax2.set_ylabel("Speed (km/h)")
-ax2.set_title("Daily Speed")
+ax2.set_title("Daily Running Speed")
 plt.xticks(rotation=45)
 st.pyplot(fig2)
