@@ -5,28 +5,34 @@ import matplotlib.pyplot as plt
 # Load the data
 df = pd.read_csv("runwise_simulated_data.csv")
 
-# Streamlit App
+# Show column names (for debugging or curiosity)
+st.write("📌 Columns in your data:")
+st.write(df.columns.tolist())
+
+# App title
 st.title("Runwise: Fitness Insights Dashboard")
 st.markdown("📊 A 30-day analysis of Rueeda's simulated treadmill data.")
 
-# Show Data
+# Show Raw Data
 st.subheader("Raw Data")
 st.dataframe(df)
 
-# Plotting total distance by day
-st.subheader("📈 Total Distance by Day")
+# Plot: Total Distance by Date
+st.subheader("📈 Distance Over Time")
 fig, ax = plt.subplots()
-ax.plot(df['Day'], df['Distance (km)'], marker='o')
-ax.set_xlabel("Day")
+ax.plot(df['Date'], df['Distance (km)'], marker='o')
+ax.set_xlabel("Date")
 ax.set_ylabel("Distance (km)")
-ax.set_title("Daily Distance")
+ax.set_title("Daily Distance Covered")
+plt.xticks(rotation=45)
 st.pyplot(fig)
 
-# Average speed or pace (optional)
-if "Speed (km/h)" in df.columns:
-    st.subheader("⚡ Average Speed Over Time")
-    fig2, ax2 = plt.subplots()
-    ax2.plot(df['Day'], df['Speed (km/h)'], color='green')
-    ax2.set_xlabel("Day")
-    ax2.set_ylabel("Speed (km/h)")
-    st.pyplot(fig2)
+# Optional: Plot Running Speed
+st.subheader("⚡ Running Speed Over Time")
+fig2, ax2 = plt.subplots()
+ax2.plot(df['Date'], df['Running Speed (km/h)'], color='green', marker='s')
+ax2.set_xlabel("Date")
+ax2.set_ylabel("Speed (km/h)")
+ax2.set_title("Daily Speed")
+plt.xticks(rotation=45)
+st.pyplot(fig2)
