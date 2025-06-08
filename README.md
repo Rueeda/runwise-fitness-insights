@@ -1,21 +1,22 @@
-# RunWise: Rueeda's Fitness Insights
+# 🏃‍♀️ Runwise: Fitness Insights Dashboard
 
+A minimalist, warm-toned dashboard built with **Streamlit** to visualize Rueeda’s running journey.
 
+## 📈 View the App
+[![View in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://runwise-fitness-insights-gdi5xyqebxeqjotsjv3xuk.streamlit.app/)
 
-This is a personal fitness data science project by Rueeda that explores simulated treadmill running data over 30 days.
+## 🚀 Features
+- Daily distance & speed visualizations
+- Clean, autumn-toned design
+- Built with Python, pandas & Streamlit
 
-**Features:**
+## 📂 Files
+- `runwise_simulated_data.csv` – fitness data
+- `streamlit_app.py` – app logic
 
-- Interactive Streamlit dashboard showing progress over time, mood analysis, and run performance clusters.
-- Predicts expected run distance based on planned speed, mood, and time of day.
-- Clean, professional interface ideal for sharing insights on LinkedIn and GitHub.
-
-## How to run
-
-1. Clone the repo
-2. Install requirements: `pip install -r requirements.txt`
-3. Run the app: `streamlit run streamlit_app.py`
+## 💡 Future Ideas
+Strava connection, mood tracking, weekly summaries
 
 ---
 
-*Created by Rueeda*
+🧡 Created by Rueeda — your motivation to run.
