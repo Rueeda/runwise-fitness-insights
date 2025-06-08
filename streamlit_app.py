@@ -17,11 +17,9 @@ col3.metric("⚡ Avg Speed", f"{df['Running Speed (km/h)'].mean():.1f} km/h")
 
 st.markdown("---")
 
-# Sidebar
+# Sidebar (no image)
 st.sidebar.title("🧡 Your Motivation to Run")
 st.sidebar.markdown("by Rueeda")
-# Display one of the selected marathon field images
-st.sidebar.image("https://images.pexels.com/photos/2402772/pexels-photo-2402772.jpeg", use_column_width=True)
 st.sidebar.markdown("Built with love & data 💻")
 
 # Data table
